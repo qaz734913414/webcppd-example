@@ -118,8 +118,8 @@ namespace webcpp {
 
 	std::string mime::getType(const std::string& ext)
 	{
-		if (this->data.find(ext) == this->data.end()) {
-			return "";
+		if (ext.empty() || this->data.find(ext) == this->data.end()) {
+			return "application/x-binary";
 		}
 		return this->data.at(ext);
 	}
