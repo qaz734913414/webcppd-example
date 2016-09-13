@@ -42,9 +42,11 @@ namespace webcpp {
 
 				if (request.has("If-Modified-Since")) {
 					Poco::DateTimeParser::parse(Poco::DateTimeFormat::HTTP_FORMAT, request.get("If-Modified-Since"), dt, tz);
-					if (file.getLastModified() == dt.timestamp()) {
+					if (file.getLastModified() <= dt.timestamp()) {
 						response.setStatusAndReason(Poco::Net::HTTPServerResponse::HTTP_NOT_MODIFIED);
 						response.set("Last-Modified", Poco::DateTimeFormatter::format(dt, Poco::DateTimeFormat::HTTP_FORMAT, tz));
+						response.send() << "";
+						return;
 					}
 				}
 
