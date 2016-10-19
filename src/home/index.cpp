@@ -4,7 +4,6 @@
 #include <Poco/File.h>
 #include <Poco/Path.h>
 #include <Poco/StreamCopier.h>
-#include <libmemcached/memcached.hpp>
 
 #include <fstream>
 
