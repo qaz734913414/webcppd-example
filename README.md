@@ -1,3 +1,6 @@
+# 重要通知
+这里的演示代码是v1.0.2之前的，以后将陆续更新，新文档参见：
+[doc](https://github.com/webcpp/webcppd/blob/master/doc/webcppd-handbook.pdf)
 # webcppd-example
 webcppd动态服务器插件式开发范例
 
